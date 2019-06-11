@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Pizza from '../components/Pizza'
-class PizzaList extends Component {
 
+
+class PizzaList extends Component {
   render() {
     return (
       <table className="table table-striped">
@@ -15,8 +16,10 @@ class PizzaList extends Component {
         </thead>
         <tbody>
           {
-            //render Pizza here
-          }
+            this.props.pizza.map(pizza =>
+            < Pizza pizza={pizza} populateForm={this.props.populateForm}/>
+          )
+        }
         </tbody>
       </table>
     );
